@@ -1,5 +1,11 @@
 """Task 1 and 2 in module 2."""
 
+"""Constants and filters/"""
+MAX_INVENTORY_CAP = 80
+HEAVY_WEIGHT_THRESHOLD = 70
+LIGHT_WEIGHT_THRESHOLD=60
+TRASH = ('rubbish', 'chewed gum', 'used tissue')
+
 
 stuff = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
 inv = {'gold coin': 42, 'rope': 1}
@@ -27,9 +33,8 @@ def display_inventory(inventory):
 
 def add_to_inventory(inventory, added_items):
     """Add new items to inventory."""
-    trash = ('rubbish', 'chewed gum', 'used tissue')
     for item_name in added_items:
-        if item_name not in trash:
+        if item_name not in TRASH:
             if item_name in inventory:
                 inventory[item_name] += 1
             else:
